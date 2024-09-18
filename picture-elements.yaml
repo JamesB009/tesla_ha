@@ -1,0 +1,368 @@
+image: local/images/Tesla/tesla_white_top_view.jpg
+type: picture-elements
+elements:
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: input_boolean.tesla_show_bandendruk
+        state: 'on'
+    elements:
+      - type: state-label
+        entity: sensor.tesla_tire_front_left
+        style:
+          transform: scale(1.3, 1.3)
+          color: white
+          left: 2%
+          top: 20%
+          width: 75px
+          text-align: center
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: input_boolean.tesla_show_bandendruk
+        state: 'on'
+    elements:
+      - type: state-label
+        entity: sensor.tesla_tire_front_right
+        style:
+          transform: scale(1.3, 1.3) rotate(0.0turn)
+          color: white
+          right: 2%
+          top: 20%
+          width: 75px
+          text-align: center
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: input_boolean.tesla_show_bandendruk
+        state: 'on'
+    elements:
+      - type: state-label
+        entity: sensor.tesla_tire_rear_left
+        style:
+          transform: scale(1.3, 1.3) rotate(0.0turn)
+          color: white
+          left: 2%
+          bottom: 20%
+          width: 75px
+          text-align: center
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: input_boolean.tesla_show_bandendruk
+        state: 'on'
+    elements:
+      - type: state-label
+        entity: sensor.tesla_tire_rear_right
+        style:
+          transform: scale(1.3, 1.3) rotate(0.0turn)
+          color: white
+          right: 2%
+          bottom: 20%
+          width: 75px
+          text-align: center
+  - entity: sensor.tesla_inside_temperatue
+    type: state-label
+    style:
+      transform: scale(1.3, 1.3) rotate(0.0turn)
+      color: white
+      right: 40%
+      bottom: 59%
+      width: 75px
+      text-align: center
+  - entity: sensor.tesla_outside_temperatue
+    type: state-label
+    style:
+      transform: scale(1.3, 1.3) rotate(0.0turn)
+      color: white
+      left: 1%
+      top: 2%
+      width: 75px
+      text-align: center
+  - entity: sensor.tesla_battery_level
+    type: state-label
+    style:
+      transform: scale(1.3, 1.3) rotate(0.0turn)
+      color: black
+      right: 40%
+      top: 11%
+      width: 75px
+      text-align: center
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: sensor.tesla_driver_front_door_open
+        state: 'true'
+    elements:
+      - type: image
+        style:
+          width: 30%
+          right: 56%
+          top: 43%
+        image: local/images/Tesla/tesla_white_door_fl.jpg
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: sensor.tesla_driver_rear_door_open
+        state: 'true'
+    elements:
+      - type: image
+        style:
+          width: 31%
+          right: 54%
+          top: 64%
+        image: local/images/Tesla/tesla_white_door_rl.jpg
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: sensor.tesla_passenger_front_door_open
+        state: 'true'
+    elements:
+      - type: image
+        style:
+          width: 30%
+          left: 86%
+          top: 42%
+        image: local/images/Tesla/tesla_white_door_fr.jpg
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: sensor.tesla_passenger_rear_door_open
+        state: 'true'
+    elements:
+      - type: image
+        style:
+          width: 30%
+          left: 85%
+          top: 64%
+        image: local/images/Tesla/tesla_white_door_rr.jpg
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: binary_sensor.tesla_charge_port_door_open
+        state: 'on'
+    elements:
+      - type: image
+        style:
+          width: 9%
+          right: 66.5%
+          top: 84%
+        image: local/images/Tesla/tesla_white_charge_port.jpg
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: binary_sensor.tesla_plugged_in
+        state: 'on'
+      - condition: state
+        entity: sensor.tesla_charging_state
+        state: Stopped
+    elements:
+      - type: image
+        style:
+          width: 29%
+          right: 61.4%
+          top: 83%
+        image: local/images/Tesla/tesla_white_charge_cable.jpg
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: sensor.tesla_charging_state
+        state: Charging
+    elements:
+      - type: image
+        style:
+          width: 29%
+          right: 61.4%
+          top: 83%
+        image: local/images/Tesla/tesla_white_charge_cable_charging.jpg
+  - type: conditional
+    conditions:
+      - condition: numeric_state
+        entity: sensor.tesla_charger_power
+        above: 0
+    elements:
+      - type: state-label
+        style:
+          left: 10%
+          bottom: '-2%'
+        entity: sensor.tesla_charger_power
+  - type: conditional
+    conditions:
+      - condition: numeric_state
+        entity: sensor.tesla_charger_power
+        above: 0
+    elements:
+      - type: state-label
+        style:
+          left: 50%
+          bottom: '-2%'
+        entity: sensor.tesla_time_to_full_charge
+        suffix: ' remaining '
+  - type: conditional
+    conditions:
+      - condition: numeric_state
+        entity: sensor.tesla_charger_power
+        above: 0
+    elements:
+      - type: state-label
+        style:
+          left: 25%
+          bottom: '-2%'
+        entity: sensor.tesla_charge_energy_added
+  - type: state-label
+    entity: binary_sensor.tesla_frunk_open
+    style:
+      width: 75
+      left: 50%
+      top: 10%
+      color: black
+  - type: state-label
+    entity: binary_sensor.tesla_trunk_open
+    style:
+      left: 50%
+      bottom: 13%
+      color: white
+  - type: custom:bar-card
+    style:
+      left: 48%
+      top: 0%
+      width: 100%
+    name: ' '
+    positions:
+      icon: none
+      indicator: none
+      minmax: none
+      title: none
+      value: none
+    entity_row: true
+    animation: 'on'
+    severity:
+      - color: red
+        from: 0
+        to: 15
+      - color: orange
+        from: 16
+        to: 50
+      - color: green
+        from: 51
+        to: 100
+    color: white
+    height: 5
+    target: 90
+    entities:
+      - entity: sensor.tesla_battery_level
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: binary_sensor.tesla_is_climate_on
+        state: 'on'
+    elements:
+      - type: icon
+        icon: mdi:fan
+        style:
+          left: 50%
+          top: 28%
+          color: green
+  - type: state-label
+    entity: sensor.tesla_state
+    style:
+      transform: scale(1.3, 1.3) rotate(0.0turn)
+      right: 6%
+      top: 2%
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: binary_sensor.tesla_locked
+        state: 'off'
+    elements:
+      - type: icon
+        icon: mdi:lock-outline
+        style:
+          left: 50%
+          top: 50%
+          color: gray
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: binary_sensor.tesla_locked
+        state: 'on'
+    elements:
+      - type: icon
+        icon: mdi:lock-open-outline
+        style:
+          left: 50%
+          top: 50%
+          color: green
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: binary_sensor.tesla_sentry_mode
+        state: 'on'
+    elements:
+      - type: icon
+        icon: mdi:cctv
+        style:
+          left: 30%
+          top: 2.4%
+          color: white
+  - type: state-label
+    style:
+      transform: scale(0.8, 0.8) rotate(0.0turn)
+      right: 3%
+      top: 5%
+    entity: sensor.tesla_odometer
+  - type: state-label
+    entity: sensor.tesla_estimated_battery_range
+    style:
+      transform: scale(0.9, 0.9) rotate(0.0turn)
+      color: black
+      right: 40%
+      top: 14%
+      width: 75px
+      text-align: center
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: binary_sensor.tesla_plugged_in
+        state: 'on'
+      - condition: numeric_state
+        entity: sensor.tesla_charger_power
+        below: 1
+      - condition: state
+        entity: sensor.tesla_geofence
+        state: Home
+      - condition: numeric_state
+        entity: sensor.tesla_battery_level
+        below: 80
+    elements:
+      - type: state-label
+        entity: sensor.tesla_start_charging_at_time
+        prefix: 'Start charging at: '
+        style:
+          left: 25%
+          bottom: '-2%'
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: sensor.tesla_state
+        state: driving
+    elements:
+      - type: state-label
+        entity: sensor.tesla_speed
+        style:
+          transform: scale(1.3, 1.3) rotate(0.0turn)
+          color: white
+          right: 40%
+          bottom: 30%
+          width: 75px
+          text-align: center
+  - type: icon
+    icon: mdi:tire
+    entity: input_boolean.tesla_show_bandendruk
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+    style:
+      right: 2%
+      top: 12%

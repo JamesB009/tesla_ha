@@ -1,2 +1,2 @@
-# tesla_ha
-Example of the picture elements yaml including the jpg images needed to make it work.
+# tesla ha
+Put the images in the www folder of you home assistant and copy the yaml from the picture-elements.yaml

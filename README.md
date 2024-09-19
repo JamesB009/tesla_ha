@@ -1,6 +1,8 @@
 # tesla ha
 Put the images in the www folder of you home assistant and copy the yaml from the picture-elements.yaml
 <br>
+![doors_opens - small](https://github.com/user-attachments/assets/aeb7a3a1-546a-470b-b0de-a7cc3858dec9)
+<br>When a door is open it will show on the image that the door is open.
 <br>The top line indicates how full the battery is, with color coding:
 <br>0-20% = red
 <br>20 - 50% = Orange
@@ -15,9 +17,10 @@ Put the images in the www folder of you home assistant and copy the yaml from th
 <br>Below that the battery % and the estimated range.
 <br>In the middle it shows that inside temperature.
 <br>Below that the icon if the car is locked, gray when locked, green when open.
-<br>When driving you will see the speed.
+<br>When driving you will see the speed and the destination of navigation with an ETA
+<br>![Driving - small](https://github.com/user-attachments/assets/e602715b-eb3b-43a5-84d9-2ef4829be31d)
+
 <br>
-<br>When a door is open it will show on the image that the door is open.
 <br>Same for the charging port.
 <br>When the car is plugged in, and not charging it will show the cable plugged in (blue) and when scheduled charging is starting.
 <br>When the car is charging it will show the charging cable in green and in the bottom the speed of charging, the added energy in this session and the time remaining until charge limit is reached.

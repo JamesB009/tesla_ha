@@ -1,7 +1,8 @@
 # tesla ha
 Put the images in the www folder of you home assistant and copy the yaml from the picture-elements.yaml
 <br>
-![doors_opens - small](https://github.com/user-attachments/assets/aeb7a3a1-546a-470b-b0de-a7cc3858dec9)
+![doors_opens - small](https://github.com/user-attachments/assets/aeb7a3a1-546a-470b-b0de-a7cc3858dec9)![doors_open_with_tire_pressure - small](https://github.com/user-attachments/assets/32a9c75d-6f0d-4380-9100-7033e1b757c0)
+
 <br>When a door is open it will show on the image that the door is open.
 <br>The top line indicates how full the battery is, with color coding:
 <br>0-20% = red
@@ -24,3 +25,6 @@ Put the images in the www folder of you home assistant and copy the yaml from th
 <br>Same for the charging port.
 <br>When the car is plugged in, and not charging it will show the cable plugged in (blue) and when scheduled charging is starting.
 <br>When the car is charging it will show the charging cable in green and in the bottom the speed of charging, the added energy in this session and the time remaining until charge limit is reached.
+<br>![scheduled_charging - small](https://github.com/user-attachments/assets/0c43edf4-8f7f-4058-95d6-ae9cbb1b70af)![charging - small](https://github.com/user-attachments/assets/c9e47a33-6710-4e1a-8f86-fea1a9992c3e)
+
+

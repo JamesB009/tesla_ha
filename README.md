@@ -21,10 +21,13 @@ Put the images in the www folder of you home assistant and copy the yaml from th
 <br>When driving you will see the speed and the destination of navigation with an ETA
 <br>![Driving - small](https://github.com/user-attachments/assets/e602715b-eb3b-43a5-84d9-2ef4829be31d)
 
-<br>
-<br>Same for the charging port.
+<br>The charging port will show open and closed on the image.
 <br>When the car is plugged in, and not charging it will show the cable plugged in (blue) and when scheduled charging is starting.
 <br>When the car is charging it will show the charging cable in green and in the bottom the speed of charging, the added energy in this session and the time remaining until charge limit is reached.
+<br>![charging - small](https://github.com/user-attachments/assets/0899fa4b-8cbe-4838-aefd-14a1c5baecf9)
+![scheduled_charging - small](https://github.com/user-attachments/assets/501a8a1d-caa9-403a-8049-70dfa85a348f)
+
+
 
 
 

@@ -14,8 +14,8 @@ The picture element in Home Assistant can visually represent the following:
 <li><b>Door status</b>: If a door is open, it will be displayed on the image.
 <li><b>Battery level</b>: The top line indicates battery charge with color coding:
 <ul>
-  <li>0-20% = Red
-  <li>20-50% = Orange
+  <li>0-15% = Red
+  <li>16-50% = Orange
   <li>50%+ = Green
 </ul>
 <li><b>Top left</b>: Displays the outside temperature.
